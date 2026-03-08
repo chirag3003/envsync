@@ -104,7 +104,7 @@ const Globe = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-slate-950/20 via-transparent to-transparent z-10 pointer-events-none" />
       
       {/* Activity Popup Overlay */}
-      <div className="absolute z-20 -top-4 sm:top-2 left-1/2 -translate-x-1/2 w-[95%] max-w-[280px] sm:max-w-[340px]">
+      <div className="absolute z-20 top-0 sm:top-2 left-1/2 -translate-x-1/2 w-[95%] max-w-[280px] sm:max-w-[340px]">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentActivityIndex}
@@ -136,7 +136,7 @@ const Globe = () => {
       >
         <canvas
           ref={canvasRef}
-          className="w-full max-w-[260px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[500px] xl:max-w-[600px] aspect-square"
+          className="w-full max-w-[300px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[450px] xl:max-w-[500px] aspect-square"
           style={{ width: '100%', height: 'auto', aspectRatio: '1/1' }}
         />
       </motion.div>
