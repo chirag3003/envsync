@@ -43,7 +43,7 @@ const stepVariants = {
 
 const HowItWorks = () => {
   return (
-    <section className="py-32 bg-slate-950 relative border-t border-white/[0.05]">
+    <section className="py-32 bg-slate-950 relative border-t border-x container mx-auto">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}

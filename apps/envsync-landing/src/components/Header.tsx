@@ -15,9 +15,9 @@ const Header = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className="fixed top-0 w-full z-50 bg-slate-950/60 backdrop-blur-xl border-b border-white/[0.05]"
+      className="fixed top-0 w-full z-50 bg-slate-950/60 backdrop-blur-xl  border"
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container border-x mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center space-x-2">
             <img 

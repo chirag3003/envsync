@@ -19,12 +19,12 @@ const lines: { type: "command" | "output" | "comment"; text: string }[] = [
 
 const CLIShowcase = () => {
   return (
-    <section className="py-32 bg-slate-950 relative overflow-hidden border-t border-white/[0.05]">
+    <section className="py-32 bg-slate-950 relative overflow-hidden container border-x border-t mx-auto">
       {/* Grid overlay */}
       <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:40px_40px] pointer-events-none" />
 
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 z-10">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -38,13 +38,13 @@ const CLIShowcase = () => {
             </span>
           </h2>
           <p className="text-xl text-neutral-400 max-w-2xl mx-auto font-light">
-            Manage secrets from your terminal with intuitive commands. No context
-            switching, no browser tabs.
+            Manage secrets from your terminal with intuitive commands. No
+            context switching, no browser tabs.
           </p>
         </motion.div>
 
         {/* Terminal card */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -68,8 +68,8 @@ const CLIShowcase = () => {
             {/* Terminal body */}
             <div className="p-6 md:p-8 font-mono text-sm md:text-base leading-relaxed bg-[#0d1117]">
               {lines.map((line, i) => (
-                <motion.div 
-                  key={i} 
+                <motion.div
+                  key={i}
                   initial={{ opacity: 0, x: -10 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
@@ -77,7 +77,9 @@ const CLIShowcase = () => {
                   className="min-h-[1.5em]"
                 >
                   {line.type === "command" && (
-                    <span className="text-emerald-400 font-medium">{line.text}</span>
+                    <span className="text-emerald-400 font-medium">
+                      {line.text}
+                    </span>
                   )}
                   {line.type === "output" && (
                     <span className="text-neutral-300">{line.text}</span>

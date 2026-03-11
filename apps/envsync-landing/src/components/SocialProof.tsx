@@ -83,7 +83,7 @@ const SocialProof = () => {
   return (
     <section
       ref={ref}
-      className="py-32 bg-slate-950 border-t border-white/[0.05] relative overflow-hidden"
+      className="py-32 bg-slate-950 container mx-auto border-x border-t relative overflow-hidden"
     >
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 z-10">
         <motion.div 

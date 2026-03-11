@@ -46,7 +46,7 @@ const CellIcon = ({ value }: { value: CellValue }) => {
 
 const Compare = () => {
   return (
-    <section className="py-32 bg-slate-950 border-t border-white/[0.05] relative overflow-hidden">
+    <section className="py-32 bg-slate-950 border-t border-x mx-auto container relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}

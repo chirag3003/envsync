@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 
 const Footer = () => {
   return (
-    <footer className="bg-slate-950 border-t border-white/[0.05] relative overflow-hidden">
+    <footer className="bg-slate-950 border-t border-x mx-auto container relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1">
