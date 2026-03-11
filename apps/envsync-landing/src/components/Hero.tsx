@@ -16,39 +16,11 @@ interface BlogPost {
 }
 
 const Hero = () => {
-  const [latestBlog, setLatestBlog] = useState<BlogPost | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchLatestBlog = async () => {
-      try {
-        const blog = await getLatestBlog();
-        if (blog) {
-          setLatestBlog(blog);
-        }
-      } catch (error) {
-        console.error("Failed to fetch latest blog:", error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchLatestBlog();
-  }, []);
-
-  const handleBlogClick = () => {
-    if (latestBlog) {
-      window.open(
-        `https://blog.envsync.cloud/blog/${latestBlog.Slug}`,
-        "_blank",
-      );
-    }
-  };
 
   return (
-    <section className="container mx-auto min-h-[100dvh] border-x border-border pt-20 md:pt-24">
-      <div className="container mx-auto grid min-h-[calc(100dvh-5rem)] grid-cols-1 gap-0 px-0 py-8 lg:grid-cols-2 lg:py-14">
-        <div className="relative flex flex-col justify-center overflow-hidden border border-border bg-[hsl(var(--surface-1))] p-6 md:p-8">
+    <section className="container mx-auto min-h-[100dvh] md:h-screen border-x border-border p-0">
+      <div className="container mx-auto grid min-h-[calc(100dvh-5rem)] h-full grid-cols-1 gap-0 p-0 lg:grid-cols-2">
+        <div className="relative flex flex-col justify-center overflow-hidden border border-border bg-[hsl(var(--surface-1))] px-10 py-32 pb-24">
           <div
             aria-hidden="true"
             className="pointer-events-none absolute inset-0 opacity-45"
@@ -59,49 +31,6 @@ const Hero = () => {
             }}
           />
           <div className="relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.35, delay: 0.1 }}
-            className="mb-5"
-          >
-            {isLoading ? (
-              <div className="inline-flex items-center border border-border bg-card px-3 py-2 text-sm text-muted-foreground">
-                <svg
-                  className="animate-spin -ml-1 mr-3 h-4 w-4 text-emerald-400"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                >
-                  <circle
-                    className="opacity-25"
-                    cx="12"
-                    cy="12"
-                    r="10"
-                    stroke="currentColor"
-                    strokeWidth="4"
-                  ></circle>
-                  <path
-                    className="opacity-75"
-                    fill="currentColor"
-                    d="m4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                  ></path>
-                </svg>
-                <span>Loading latest post...</span>
-              </div>
-            ) : latestBlog ? (
-              <button
-                onClick={handleBlogClick}
-                className="group inline-flex items-center border border-border bg-card px-3 py-2 text-left text-sm text-muted-foreground transition-colors hover:border-primary/60 hover:text-foreground"
-              >
-                <span className="mr-3 inline-block h-2 w-2 bg-primary" />
-                <span className="max-w-[250px] truncate font-semibold tracking-wide">
-                  Latest: {latestBlog.preview[0]?.[0]?.[0] || latestBlog.Page}
-                </span>
-                <ArrowRight className="ml-2 h-3.5 w-3.5 shrink-0 transition-transform group-hover:translate-x-1" />
-              </button>
-            ) : null}
-          </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
