@@ -82,9 +82,9 @@ const Integrations = () => {
     <div className="min-h-screen bg-background">
       <Header />
 
-      <main className="pt-20 md:pt-24">
-        <section className="container mx-auto border-x border-border px-0 py-16 md:py-20">
-          <div className="relative w-full overflow-hidden border border-border bg-[hsl(var(--surface-1))] p-6 text-left md:p-8">
+      <main className="">
+        <section className="container mx-auto border-x border-border px-0 ">
+          <div className="relative w-full overflow-hidden border border-border bg-[hsl(var(--surface-1))] p-6 text-left md:p-8 md:py-32">
             <div
               aria-hidden="true"
               className="pointer-events-none absolute inset-0 opacity-45"
@@ -107,50 +107,83 @@ const Integrations = () => {
           </div>
         </section>
 
-        <section className="container mx-auto border-x border-t border-border px-0 py-16 md:py-20">
+        <section className="container mx-auto border-x border-t border-border p-0">
           <div className="w-full">
-            <div className="mb-8 flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center border border-border bg-[hsl(var(--surface-2))]">
-                <MessageCircle className="h-5 w-5 text-primary" />
-              </div>
-              <div>
-                <h2 className="text-2xl font-bold text-foreground">Notifications</h2>
-                <p className="text-sm text-muted-foreground md:text-base">
-                  Keep engineering and security teams informed in real-time.
-                </p>
+            <div className="relative overflow-hidden border border-border bg-[hsl(var(--surface-1))] p-6 text-left md:p-8">
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 opacity-45"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(hsl(var(--border) / 0.7) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--border) / 0.7) 1px, transparent 1px)",
+                  backgroundSize: "36px 36px",
+                }}
+              />
+              <div className="relative z-10 flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center border border-border bg-[hsl(var(--surface-2))]">
+                  <MessageCircle className="h-5 w-5 text-primary" />
+                </div>
+                <div>
+                  <h2 className="text-2xl font-bold text-foreground">Notifications</h2>
+                  <p className="text-sm text-muted-foreground md:text-base">
+                    Keep engineering and security teams informed in real-time.
+                  </p>
+                </div>
               </div>
             </div>
             <IntegrationGrid integrations={notificationIntegrations} />
           </div>
         </section>
 
-        <section className="container mx-auto border-x border-t border-border px-0 py-16 md:py-20">
+        <section className="container mx-auto border-x border-t border-border p-0">
           <div className="w-full">
-            <div className="mb-8 flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center border border-border bg-[hsl(var(--surface-2))]">
-                <Shield className="h-5 w-5 text-primary" />
-              </div>
-              <div>
-                <h2 className="text-2xl font-bold text-foreground">Deployment Platforms</h2>
-                <p className="text-sm text-muted-foreground md:text-base">
-                  Push controlled environment updates wherever your workloads run.
-                </p>
+            <div className="relative overflow-hidden border border-border bg-[hsl(var(--surface-1))] p-6 text-left md:p-8">
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 opacity-45"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(hsl(var(--border) / 0.7) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--border) / 0.7) 1px, transparent 1px)",
+                  backgroundSize: "36px 36px",
+                }}
+              />
+              <div className="relative z-10 flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center border border-border bg-[hsl(var(--surface-2))]">
+                  <Shield className="h-5 w-5 text-primary" />
+                </div>
+                <div>
+                  <h2 className="text-2xl font-bold text-foreground">Deployment Platforms</h2>
+                  <p className="text-sm text-muted-foreground md:text-base">
+                    Push controlled environment updates wherever your workloads run.
+                  </p>
+                </div>
               </div>
             </div>
             <IntegrationGrid integrations={platformIntegrations} />
           </div>
         </section>
 
-        <section className="container mx-auto border-x border-t border-border px-0 py-16 md:py-20">
-          <div className="w-full border border-border bg-[hsl(var(--surface-1))] p-8 text-center md:p-10">
-            <h3 className="mb-5 text-3xl font-bold text-foreground">Need a custom integration?</h3>
-            <p className="mb-8 text-lg text-muted-foreground">
-              Tell us what your stack needs. We prioritize integrations that improve secure delivery velocity.
-            </p>
-            <Button size="lg" className="px-8">
-              Request Integration
-              <ArrowRight className="h-4 w-4" />
-            </Button>
+        <section className="container mx-auto border-x border-t border-border p-0">
+          <div className="relative w-full overflow-hidden border border-border bg-[hsl(var(--surface-1))] p-8 text-left md:p-10">
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 opacity-45"
+              style={{
+                backgroundImage:
+                  "linear-gradient(hsl(var(--border) / 0.7) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--border) / 0.7) 1px, transparent 1px)",
+                backgroundSize: "36px 36px",
+              }}
+            />
+            <div className="relative z-10">
+              <h3 className="mb-4 text-3xl font-bold text-foreground">Need a custom integration?</h3>
+              <p className="mb-8 max-w-2xl text-lg text-muted-foreground">
+                Tell us what your stack needs. We prioritize integrations that improve secure delivery velocity.
+              </p>
+              <Button size="lg" className="px-8">
+                Request Integration
+                <ArrowRight className="h-4 w-4" />
+              </Button>
+            </div>
           </div>
         </section>
       </main>

@@ -56,9 +56,9 @@ const About = () => {
     <div className="min-h-screen bg-background">
       <Header />
 
-      <main className="pt-20 md:pt-24">
-        <section className="container mx-auto border-x border-border px-0 py-16 md:py-20">
-          <div className="relative w-full overflow-hidden border border-border bg-[hsl(var(--surface-1))] p-6 text-left md:p-8">
+      <main className="p-0">
+        <section className="container mx-auto border-x border-border p-0">
+          <div className="relative w-full overflow-hidden border border-border bg-[hsl(var(--surface-1))] p-6 text-left md:p-8 md:py-32">
             <div
               aria-hidden="true"
               className="pointer-events-none absolute inset-0 opacity-45"
@@ -81,7 +81,7 @@ const About = () => {
           </div>
         </section>
 
-        <section className="container mx-auto border-x border-t border-border px-0 py-16 md:py-20">
+        <section className="container mx-auto border-x border-t border-border p-0">
           <div className="grid w-full grid-cols-1 gap-0 md:grid-cols-3">
             <div className="border border-border bg-[hsl(var(--surface-1))] p-6">
               <p className="text-xs uppercase tracking-[0.16em] text-muted-foreground">Mission</p>
@@ -98,7 +98,7 @@ const About = () => {
           </div>
         </section>
 
-        <section className="container mx-auto border-x border-t border-border px-0 py-16 md:py-20">
+        <section className="container mx-auto border-x border-t border-border p-0">
           <div className="w-full border border-border bg-[hsl(var(--surface-1))] p-8 md:p-10">
             <h2 className="mb-5 text-3xl font-bold text-foreground md:text-4xl">Why we built EnvSync</h2>
             <p className="mb-4 text-muted-foreground">
@@ -112,9 +112,25 @@ const About = () => {
           </div>
         </section>
 
-        <section className="container mx-auto border-x border-t border-border px-0 py-16 md:py-20">
+        <section className="container mx-auto border-x border-t border-border p-0">
           <div className="w-full">
-            <h2 className="mb-10 text-center text-3xl font-bold text-foreground md:text-4xl">Core principles</h2>
+            <div className="relative overflow-hidden border border-border bg-[hsl(var(--surface-1))] p-6 text-left md:p-8">
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 opacity-45"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(hsl(var(--border) / 0.7) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--border) / 0.7) 1px, transparent 1px)",
+                  backgroundSize: "36px 36px",
+                }}
+              />
+              <div className="relative z-10">
+                <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl">Core principles</h2>
+                <p className="max-w-2xl text-lg text-muted-foreground md:text-xl">
+                  The operating principles behind every product and security decision.
+                </p>
+              </div>
+            </div>
             <div className="grid grid-cols-1 gap-0 md:grid-cols-2">
               {values.map((value, index) => (
                 <div key={index} className="-ml-px -mt-px border border-border bg-[hsl(var(--surface-1))] p-7">
@@ -131,9 +147,25 @@ const About = () => {
           </div>
         </section>
 
-        <section className="container mx-auto border-x border-t border-border px-0 py-16 md:py-20">
+        <section className="container mx-auto border-x border-t border-border p-0">
           <div className="w-full">
-            <h2 className="mb-10 text-center text-3xl font-bold text-foreground md:text-4xl">Team</h2>
+            <div className="relative overflow-hidden border border-border bg-[hsl(var(--surface-1))] p-6 text-left md:p-8">
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 opacity-45"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(hsl(var(--border) / 0.7) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--border) / 0.7) 1px, transparent 1px)",
+                  backgroundSize: "36px 36px",
+                }}
+              />
+              <div className="relative z-10">
+                <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl">Team</h2>
+                <p className="max-w-2xl text-lg text-muted-foreground md:text-xl">
+                  Engineers focused on secure systems and reliable developer tooling.
+                </p>
+              </div>
+            </div>
             <div className="grid grid-cols-1 gap-0 md:grid-cols-3">
               {team.map((member, index) => (
                 <div key={index} className="-ml-px -mt-px border border-border bg-[hsl(var(--surface-1))] p-7 text-center">
@@ -159,18 +191,29 @@ const About = () => {
           </div>
         </section>
 
-        <section className="container mx-auto border-x border-t border-border px-0 py-16 md:py-20">
-          <div className="w-full border border-border bg-[hsl(var(--surface-1))] p-8 text-center md:p-10">
-            <h2 className="mb-5 text-4xl font-bold text-foreground">Ready to build with EnvSync?</h2>
-            <p className="mb-8 text-lg text-muted-foreground">
-              Start with a secure baseline and scale configuration workflows with your team.
-            </p>
-            <Link to="/onboarding">
-              <Button size="lg" className="px-8">
-                  Start Free
-                  <ArrowRight className="h-4 w-4" />
-                </Button>
-            </Link>
+        <section className="container mx-auto border-x border-t border-border p-0">
+          <div className="relative w-full overflow-hidden border border-border bg-[hsl(var(--surface-1))] p-8 text-left md:p-10">
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 opacity-45"
+              style={{
+                backgroundImage:
+                  "linear-gradient(hsl(var(--border) / 0.7) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--border) / 0.7) 1px, transparent 1px)",
+                backgroundSize: "36px 36px",
+              }}
+            />
+            <div className="relative z-10">
+              <h2 className="mb-4 text-4xl font-bold text-foreground">Ready to build with EnvSync?</h2>
+              <p className="mb-8 max-w-2xl text-lg text-muted-foreground">
+                Start with a secure baseline and scale configuration workflows with your team.
+              </p>
+              <Link to="/onboarding">
+                <Button size="lg" className="px-8">
+                    Start Free
+                    <ArrowRight className="h-4 w-4" />
+                  </Button>
+              </Link>
+            </div>
           </div>
         </section>
       </main>
