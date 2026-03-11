@@ -48,7 +48,17 @@ const Hero = () => {
   return (
     <section className="container mx-auto min-h-[100dvh] border-x border-border pt-20 md:pt-24">
       <div className="container mx-auto grid min-h-[calc(100dvh-5rem)] grid-cols-1 gap-0 px-0 py-8 lg:grid-cols-2 lg:py-14">
-        <div className="flex flex-col justify-center border border-border p-6 md:p-8">
+        <div className="relative flex flex-col justify-center overflow-hidden border border-border bg-[hsl(var(--surface-1))] p-6 md:p-8">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 opacity-45"
+            style={{
+              backgroundImage:
+                "linear-gradient(hsl(var(--border) / 0.7) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--border) / 0.7) 1px, transparent 1px)",
+              backgroundSize: "36px 36px",
+            }}
+          />
+          <div className="relative z-10">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -133,6 +143,7 @@ const Hero = () => {
               </Button>
             </Link>
           </motion.div>
+          </div>
         </div>
 
         <motion.div

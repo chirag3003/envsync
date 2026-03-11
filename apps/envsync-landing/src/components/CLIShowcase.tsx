@@ -19,21 +19,32 @@ const lines: { type: "command" | "output" | "comment"; text: string }[] = [
 
 const CLIShowcase = () => {
   return (
-    <section className="container mx-auto border-x border-t border-border py-20 md:py-24">
+    <section className="container mx-auto border-x border-t border-border p-0">
       <div className="relative container mx-auto px-0 z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.35 }}
-          className="mb-14 text-center"
+          className="relative overflow-hidden border border-border bg-[hsl(var(--surface-1))] p-6 text-left md:p-8 md:py-12"
         >
-          <h2 className="mb-5 text-4xl font-bold text-foreground md:text-5xl">
-            A CLI that just works
-          </h2>
-          <p className="mx-auto max-w-2xl text-lg text-muted-foreground md:text-xl">
-            Operate secrets where you already ship: your terminal.
-          </p>
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 opacity-45"
+            style={{
+              backgroundImage:
+                "linear-gradient(hsl(var(--border) / 0.7) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--border) / 0.7) 1px, transparent 1px)",
+              backgroundSize: "36px 36px",
+            }}
+          />
+          <div className="relative z-10">
+            <h2 className="mb-4 text-4xl font-bold text-foreground md:text-5xl">
+              A CLI that just works
+            </h2>
+            <p className="max-w-2xl text-lg text-muted-foreground md:text-xl">
+              Operate secrets where you already ship: your terminal.
+            </p>
+          </div>
         </motion.div>
 
         <motion.div

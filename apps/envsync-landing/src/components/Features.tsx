@@ -132,7 +132,7 @@ const features = [
 
 const Features = () => {
   return (
-    <section id="features" className="container mx-auto border-x border-t border-border py-20 md:py-24 px-0 pb-0 md:pb-0">
+    <section id="features" className="container mx-auto border-x border-t border-border py-0 px-0">
       <div className="relative container mx-auto px-0 z-10">
 
         <motion.div
@@ -140,7 +140,7 @@ const Features = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.35 }}
-          className="relative overflow-hidden border border-border bg-[hsl(var(--surface-1))] p-6 text-left md:p-8"
+          className="relative overflow-hidden border border-border bg-[hsl(var(--surface-1))] p-6 text-left md:p-8 md:py-12"
         >
           <div
             aria-hidden="true"

@@ -43,21 +43,32 @@ const stepVariants = {
 
 const HowItWorks = () => {
   return (
-    <section className="container mx-auto border-x border-t border-border py-20 md:py-24">
+    <section className="container mx-auto border-x border-t border-border py-0 px-0">
       <div className="container mx-auto px-0">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.35 }}
-          className="mb-14 text-center"
+          className="relative overflow-hidden border border-border bg-[hsl(var(--surface-1))] p-6 text-left md:p-8 md:py-12"
         >
-          <h2 className="mb-5 text-4xl font-bold text-foreground md:text-5xl">
-            Get started in three steps
-          </h2>
-          <p className="mx-auto max-w-2xl text-lg text-muted-foreground md:text-xl">
-            From install to production sync in three repeatable commands.
-          </p>
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 opacity-45"
+            style={{
+              backgroundImage:
+                "linear-gradient(hsl(var(--border) / 0.7) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--border) / 0.7) 1px, transparent 1px)",
+              backgroundSize: "36px 36px",
+            }}
+          />
+          <div className="relative z-10">
+            <h2 className="mb-4 text-4xl font-bold text-foreground md:text-5xl">
+              Get started in three steps
+            </h2>
+            <p className="max-w-2xl text-lg text-muted-foreground md:text-xl">
+              From install to production sync in three repeatable commands.
+            </p>
+          </div>
         </motion.div>
 
         <motion.div
@@ -73,12 +84,6 @@ const HowItWorks = () => {
               key={step.number}
               className="group relative border border-border bg-[hsl(var(--surface-1))] p-6"
             >
-              {index < steps.length - 1 && (
-                <div className="absolute right-0 top-10 hidden translate-x-1/2 md:block">
-                  <ArrowRight className="h-5 w-5 text-muted-foreground" />
-                </div>
-              )}
-
               <div className="mb-5 flex h-14 w-14 items-center justify-center border border-border bg-[hsl(var(--surface-2))] transition-colors group-hover:border-primary/50">
                 <step.icon className="h-6 w-6 text-primary" />
               </div>

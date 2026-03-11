@@ -84,7 +84,17 @@ const Integrations = () => {
 
       <main className="pt-20 md:pt-24">
         <section className="container mx-auto border-x border-border px-0 py-16 md:py-20">
-          <div className="w-full text-center">
+          <div className="relative w-full overflow-hidden border border-border bg-[hsl(var(--surface-1))] p-6 text-left md:p-8">
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 opacity-45"
+              style={{
+                backgroundImage:
+                  "linear-gradient(hsl(var(--border) / 0.7) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--border) / 0.7) 1px, transparent 1px)",
+                backgroundSize: "36px 36px",
+              }}
+            />
+            <div className="relative z-10">
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-primary">Integrations</p>
             <h1 className="mb-6 text-5xl font-bold text-foreground md:text-6xl">
               Connect EnvSync with the tools your team ships on.
@@ -93,6 +103,7 @@ const Integrations = () => {
               Build a consistent secret delivery workflow across notifications, CI, cloud platforms,
               and runtime environments.
             </p>
+            </div>
           </div>
         </section>
 
