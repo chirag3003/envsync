@@ -87,52 +87,52 @@ const SkeletonSix = () => (
 
 const features = [
   {
-    title: "Military-grade encryption",
-    description: "End-to-end encryption with AES-256 and zero-knowledge architecture. Your secrets are always protected.",
+    title: "End-to-end encryption",
+    description: "AES-256 with a zero-knowledge model keeps plaintext out of places it should never be.",
     header: <SkeletonOne />,
-    icon: <Shield className="h-4 w-4 text-emerald-500" />,
+    icon: <Shield className="h-4 w-4 text-primary" />,
     className: "md:col-span-2",
   },
   {
-    title: "Lightning fast sync",
-    description: "Deploy configuration changes across all environments in seconds.",
+    title: "Fast sync",
+    description: "Ship config updates across environments in seconds, not deployment windows.",
     header: <SkeletonTwo />,
-    icon: <Zap className="h-4 w-4 text-emerald-500" />,
+    icon: <Zap className="h-4 w-4 text-primary" />,
     className: "md:col-span-1",
   },
   {
-    title: "Multi-environment",
-    description: "Manage development, staging, and production environments with granular access controls.",
+    title: "Multi-environment control",
+    description: "Operate dev, staging, and production with the same policy and approval surface.",
     header: <SkeletonThree />,
-    icon: <Globe className="h-4 w-4 text-emerald-500" />,
+    icon: <Globe className="h-4 w-4 text-primary" />,
     className: "md:col-span-1",
   },
   {
-    title: "Git-like workflows",
-    description: "Version control for your configurations with branching, merging, and full rollback capabilities.",
+    title: "Versioned workflows",
+    description: "Track every config change with history, diff visibility, and rollback support.",
     header: <SkeletonFour />,
-    icon: <GitBranch className="h-4 w-4 text-emerald-500" />,
+    icon: <GitBranch className="h-4 w-4 text-primary" />,
     className: "md:col-span-2",
   },
   {
-    title: "Team collaboration",
-    description: "Share secrets securely with team members using strict role-based permissions.",
+    title: "Team-level access",
+    description: "Control secret visibility with scoped permissions mapped to your org structure.",
     header: <SkeletonFive />,
-    icon: <Users className="h-4 w-4 text-emerald-500" />,
+    icon: <Users className="h-4 w-4 text-primary" />,
     className: "md:col-span-2",
   },
   {
-    title: "Secrets management lifecycle",
-    description: "Manage GPG keys and certificates easily.",
+    title: "Key lifecycle",
+    description: "Manage certificates and signing keys in one operational workflow.",
     header: <SkeletonSix />,
-    icon: <Lock className="h-4 w-4 text-emerald-500" />,
+    icon: <Lock className="h-4 w-4 text-primary" />,
     className: "md:col-span-1",
   },
 ];
 
 const Features = () => {
   return (
-    <section id="features" className="container mx-auto border-x border-t border-border py-24">
+    <section id="features" className="container mx-auto border-x border-t border-border py-20 md:py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         <motion.div
@@ -146,8 +146,7 @@ const Features = () => {
             Everything you need to secure your secrets
           </h2>
           <p className="mx-auto max-w-3xl text-lg text-muted-foreground md:text-xl">
-            Built by developers, for developers. EnvSync provides all the tools you need
-            to manage environment variables and secrets at scale.
+            Built for teams shipping across multiple stages with strict security and fast release cycles.
           </p>
         </motion.div>
 

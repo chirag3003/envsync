@@ -46,14 +46,14 @@ const Hero = () => {
   };
 
   return (
-    <section className="container mx-auto min-h-[100dvh] border-x border-border pt-24">
-      <div className="container mx-auto grid min-h-[calc(100dvh-6rem)] grid-cols-1 gap-10 px-4 py-10 sm:px-6 lg:grid-cols-2 lg:gap-12 lg:px-8 lg:py-16">
+    <section className="container mx-auto min-h-[100dvh] border-x border-border pt-20 md:pt-24">
+      <div className="container mx-auto grid min-h-[calc(100dvh-5rem)] grid-cols-1 gap-8 px-4 py-8 sm:px-6 lg:grid-cols-2 lg:gap-10 lg:px-8 lg:py-14">
         <div className="flex flex-col justify-center">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.35, delay: 0.1 }}
-            className="mb-6"
+            className="mb-5"
           >
             {isLoading ? (
               <div className="inline-flex items-center border border-border bg-card px-3 py-2 text-sm text-muted-foreground">
@@ -97,21 +97,21 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.35, delay: 0.2 }}
-            className="mb-6 text-4xl font-bold leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-6xl"
+            className="mb-5 text-4xl font-bold leading-[1.04] tracking-tight text-foreground sm:text-5xl md:text-6xl"
           >
-            Ship faster with
+            Shipping secure apps
             <br className="hidden sm:block" />
-            <span className="text-primary">controlled secrets.</span>
+            <span className="text-primary">starts with controlled secrets.</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.35, delay: 0.3 }}
-            className="mb-8 max-w-xl text-lg leading-relaxed text-muted-foreground sm:text-xl"
+            className="mb-7 max-w-xl text-lg leading-relaxed text-muted-foreground sm:text-xl"
           >
-            EnvSync gives your team one source of truth for environment variables across
-            development, staging, and production with audit-ready controls.
+            EnvSync gives your team one source of truth for environment variables across development,
+            staging, and production with audit-ready access control.
           </motion.p>
 
           <motion.div

@@ -83,7 +83,7 @@ const SocialProof = () => {
   return (
     <section
       ref={ref}
-      className="container mx-auto border-x border-t border-border py-24"
+      className="container mx-auto border-x border-t border-border py-16 md:py-20"
     >
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 z-10">
         <motion.div
@@ -91,10 +91,10 @@ const SocialProof = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.35 }}
-          className="text-center mb-16"
+          className="mb-10 text-center"
         >
-          <h2 className="mb-5 text-4xl font-bold text-foreground md:text-5xl">
-            Trusted by developers worldwide
+          <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl">
+            Trusted by engineering teams
           </h2>
         </motion.div>
 
@@ -103,7 +103,7 @@ const SocialProof = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.35, delay: 0.1 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-5xl mx-auto"
+          className="mx-auto grid max-w-5xl grid-cols-2 gap-0 md:grid-cols-4"
         >
           {stats.map((stat) => (
             <StatCard key={stat.label} stat={stat} isVisible={isVisible} />

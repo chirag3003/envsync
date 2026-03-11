@@ -5,22 +5,21 @@ import { motion } from "framer-motion";
 
 const CTA = () => {
   return (
-    <section className="container mx-auto border-x border-t border-border py-24">
+    <section className="container mx-auto border-x border-t border-border py-20 md:py-24">
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 z-10">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.35 }}
-          className="mx-auto max-w-4xl border border-border bg-[hsl(var(--surface-1))] p-8 text-center md:p-12"
+          className="mx-auto max-w-4xl border border-border bg-[hsl(var(--surface-1))] p-7 text-center md:p-10"
         >
           <h2 className="mb-5 text-4xl font-bold leading-tight tracking-tight text-foreground md:text-5xl lg:text-6xl">
             Ready to secure your environment variables?
           </h2>
 
           <p className="mx-auto mb-10 max-w-2xl text-lg text-muted-foreground md:text-xl">
-            Join thousands of developers who trust EnvSync to keep their secrets
-            safe. Experience the difference today.
+            Give your team a secure, fast control plane for environment configuration.
           </p>
 
           <div className="mb-10 flex flex-col items-center justify-center gap-4 sm:flex-row">

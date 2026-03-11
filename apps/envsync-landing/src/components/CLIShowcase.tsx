@@ -19,21 +19,20 @@ const lines: { type: "command" | "output" | "comment"; text: string }[] = [
 
 const CLIShowcase = () => {
   return (
-    <section className="container mx-auto border-x border-t border-border py-24">
+    <section className="container mx-auto border-x border-t border-border py-20 md:py-24">
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.35 }}
-          className="text-center mb-16"
+          className="mb-14 text-center"
         >
           <h2 className="mb-5 text-4xl font-bold text-foreground md:text-5xl">
             A CLI that just works
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground md:text-xl">
-            Manage secrets from your terminal with intuitive commands. No
-            context switching, no browser tabs.
+            Operate secrets where you already ship: your terminal.
           </p>
         </motion.div>
 

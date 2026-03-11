@@ -43,21 +43,20 @@ const stepVariants = {
 
 const HowItWorks = () => {
   return (
-    <section className="container mx-auto border-x border-t border-border py-24">
+    <section className="container mx-auto border-x border-t border-border py-20 md:py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.35 }}
-          className="mb-16 text-center"
+          className="mb-14 text-center"
         >
           <h2 className="mb-5 text-4xl font-bold text-foreground md:text-5xl">
             Get started in three steps
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground md:text-xl">
-            From installation to syncing secrets across your team in under a
-            minute.
+            From install to production sync in three repeatable commands.
           </p>
         </motion.div>
 
