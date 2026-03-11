@@ -48,12 +48,12 @@ const formatNumber = (n: number): string => {
 const StatCard = ({ stat, isVisible }: { stat: Stat; isVisible: boolean }) => {
   const count = useCountUp(stat.value, isVisible);
   return (
-    <div className="text-center p-6 rounded-2xl bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.04] transition-colors">
-      <div className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-400 tabular-nums mb-3">
+    <div className="border border-border bg-[hsl(var(--surface-1))] p-6 text-center transition-colors hover:border-primary/40">
+      <div className="mb-2 text-4xl font-bold tabular-nums text-foreground md:text-5xl">
         {formatNumber(count)}
         {stat.suffix}
       </div>
-      <div className="text-neutral-400 text-sm font-medium uppercase tracking-wider">{stat.label}</div>
+      <div className="text-sm font-medium uppercase tracking-wider text-muted-foreground">{stat.label}</div>
     </div>
   );
 };
@@ -83,29 +83,26 @@ const SocialProof = () => {
   return (
     <section
       ref={ref}
-      className="py-32 bg-slate-950 container mx-auto border-x border-t relative overflow-hidden"
+      className="container mx-auto border-x border-t border-border py-24"
     >
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 z-10">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.35 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Trusted by{" "}
-            <span className="bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent">
-              developers worldwide
-            </span>
+          <h2 className="mb-5 text-4xl font-bold text-foreground md:text-5xl">
+            Trusted by developers worldwide
           </h2>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          transition={{ duration: 0.35, delay: 0.1 }}
           className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-5xl mx-auto"
         >
           {stats.map((stat) => (

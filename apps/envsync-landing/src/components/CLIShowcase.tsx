@@ -19,76 +19,80 @@ const lines: { type: "command" | "output" | "comment"; text: string }[] = [
 
 const CLIShowcase = () => {
   return (
-    <section className="py-32 bg-slate-950 relative overflow-hidden container border-x border-t mx-auto">
-      {/* Grid overlay */}
-      <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:40px_40px] pointer-events-none" />
-
+    <section className="container mx-auto border-x border-t border-border py-24">
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.35 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            A CLI that{" "}
-            <span className="bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent">
-              just works
-            </span>
+          <h2 className="mb-5 text-4xl font-bold text-foreground md:text-5xl">
+            A CLI that just works
           </h2>
-          <p className="text-xl text-neutral-400 max-w-2xl mx-auto font-light">
+          <p className="mx-auto max-w-2xl text-lg text-muted-foreground md:text-xl">
             Manage secrets from your terminal with intuitive commands. No
             context switching, no browser tabs.
           </p>
         </motion.div>
 
-        {/* Terminal card */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="max-w-3xl mx-auto"
+          transition={{ duration: 0.35, delay: 0.1 }}
+          className="mx-auto grid max-w-5xl grid-cols-1 gap-4 lg:grid-cols-[2fr_1fr]"
         >
-          <div className="bg-[#0d1117] border border-white/[0.1] rounded-2xl overflow-hidden shadow-2xl">
-            {/* macOS title bar */}
-            <div className="flex items-center justify-between px-4 py-3 bg-[#161b22] border-b border-white/[0.05]">
+          <div className="overflow-hidden border border-border bg-[hsl(var(--surface-1))]">
+            <div className="flex items-center justify-between border-b border-border bg-[hsl(var(--surface-2))] px-4 py-3">
               <div className="flex space-x-2">
-                <div className="w-3 h-3 rounded-full bg-red-500/80" />
-                <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                <div className="w-3 h-3 rounded-full bg-green-500/80" />
+                <div className="h-2.5 w-2.5 border border-border" />
+                <div className="h-2.5 w-2.5 border border-border" />
+                <div className="h-2.5 w-2.5 border border-border" />
               </div>
-              <span className="text-xs text-neutral-500 font-mono tracking-wider">
+              <span className="font-mono text-xs tracking-wider text-muted-foreground">
                 bash — envsync
               </span>
-              <div className="w-12"></div> {/* Spacer for centering */}
+              <div className="w-12" />
             </div>
 
-            {/* Terminal body */}
-            <div className="p-6 md:p-8 font-mono text-sm md:text-base leading-relaxed bg-[#0d1117]">
+            <div className="bg-[hsl(var(--surface-1))] p-6 font-mono text-sm leading-relaxed md:p-8 md:text-base">
               {lines.map((line, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, x: -10 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: 0.3 + i * 0.05 }}
+                  transition={{ delay: 0.2 + i * 0.04 }}
                   className="min-h-[1.5em]"
                 >
                   {line.type === "command" && (
-                    <span className="text-emerald-400 font-medium">
-                      {line.text}
-                    </span>
+                    <span className="font-medium text-primary">{line.text}</span>
                   )}
                   {line.type === "output" && (
-                    <span className="text-neutral-300">{line.text}</span>
+                    <span className="text-foreground">{line.text}</span>
                   )}
                   {line.type === "comment" && (
-                    <span className="text-neutral-500 italic">{line.text}</span>
+                    <span className="italic text-muted-foreground">{line.text}</span>
                   )}
                 </motion.div>
               ))}
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-3 lg:grid-cols-1">
+            <div className="border border-border bg-[hsl(var(--surface-1))] p-4">
+              <p className="text-xs uppercase tracking-[0.16em] text-muted-foreground">Latency</p>
+              <p className="mt-2 text-2xl font-semibold text-foreground">~120ms</p>
+            </div>
+            <div className="border border-border bg-[hsl(var(--surface-1))] p-4">
+              <p className="text-xs uppercase tracking-[0.16em] text-muted-foreground">Secrets synced</p>
+              <p className="mt-2 text-2xl font-semibold text-foreground">1,500+</p>
+            </div>
+            <div className="col-span-2 border border-border bg-[hsl(var(--surface-1))] p-4 lg:col-span-1">
+              <p className="mb-2 text-xs uppercase tracking-[0.16em] text-muted-foreground">Latest action</p>
+              <p className="font-mono text-sm text-foreground">envsync push --env staging</p>
             </div>
           </div>
         </motion.div>

@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Github } from "lucide-react";
-import Globe from "./Globe";
+import { ArrowRight, Github, KeyRound, ShieldCheck, Terminal, Workflow } from "lucide-react";
 import { Link } from "react-router-dom";
 import { getLatestBlog } from "@/helpers/get-latest-blog";
-import { Spotlight } from "./ui/spotlight";
 import { motion } from "framer-motion";
 
 interface BlogPost {
@@ -48,19 +46,17 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-[100dvh] lg:h-screen container mx-auto border-x flex items-center justify-center bg-slate-950 relative overflow-hidden antialiased py-20 lg:py-0">
-      <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 z-20 flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 min-h-0 py-12 lg:py-0">
-        {/* Main Text Content */}
-        <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left z-20 mt-16 md:mt-24 lg:mt-0 max-w-2xl mx-auto lg:mx-0">
-          {/* Latest blog post section */}
+    <section className="container mx-auto min-h-[100dvh] border-x border-border pt-24">
+      <div className="container mx-auto grid min-h-[calc(100dvh-6rem)] grid-cols-1 gap-10 px-4 py-10 sm:px-6 lg:grid-cols-2 lg:gap-12 lg:px-8 lg:py-16">
+        <div className="flex flex-col justify-center">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mb-8 w-full flex justify-center lg:justify-start"
+            transition={{ duration: 0.35, delay: 0.1 }}
+            className="mb-6"
           >
             {isLoading ? (
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-slate-900 border border-slate-800 text-slate-400 text-sm font-medium shadow-sm">
+              <div className="inline-flex items-center border border-border bg-card px-3 py-2 text-sm text-muted-foreground">
                 <svg
                   className="animate-spin -ml-1 mr-3 h-4 w-4 text-emerald-400"
                   xmlns="http://www.w3.org/2000/svg"
@@ -86,16 +82,13 @@ const Hero = () => {
             ) : latestBlog ? (
               <button
                 onClick={handleBlogClick}
-                className="inline-flex items-center px-4 py-2 rounded-full bg-slate-900/50 backdrop-blur-sm border border-slate-800 text-slate-300 text-sm font-medium hover:bg-slate-800 hover:text-white transition-all duration-300 cursor-pointer group shadow-xl"
+                className="group inline-flex items-center border border-border bg-card px-3 py-2 text-left text-sm text-muted-foreground transition-colors hover:border-primary/60 hover:text-foreground"
               >
-                <span className="relative flex size-2 mr-3 shrink-0">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
-                  <span className="relative inline-flex size-2 rounded-full bg-emerald-500"></span>
-                </span>
-                <span className="font-semibold text-xs md:text-sm tracking-wide truncate max-w-[200px] sm:max-w-xs md:max-w-sm">
+                <span className="mr-3 inline-block h-2 w-2 bg-primary" />
+                <span className="max-w-[250px] truncate font-semibold tracking-wide">
                   Latest: {latestBlog.preview[0]?.[0]?.[0] || latestBlog.Page}
                 </span>
-                <ArrowRight className="ml-2 h-3.5 w-3.5 transition-transform group-hover:translate-x-1 shrink-0" />
+                <ArrowRight className="ml-2 h-3.5 w-3.5 shrink-0 transition-transform group-hover:translate-x-1" />
               </button>
             ) : null}
           </motion.div>
@@ -103,60 +96,85 @@ const Hero = () => {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-500 mb-6 lg:mb-8 leading-[1.1] tracking-tight"
+            transition={{ duration: 0.35, delay: 0.2 }}
+            className="mb-6 text-4xl font-bold leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-6xl"
           >
-            Sync your secrets, <br className="hidden sm:block" />
-            <span className="bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent pb-2 block">
-              secure your apps.
-            </span>
+            Ship faster with
+            <br className="hidden sm:block" />
+            <span className="text-primary">controlled secrets.</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-lg sm:text-xl lg:text-2xl text-neutral-400 mb-10 lg:mb-12 max-w-2xl leading-relaxed font-light"
+            transition={{ duration: 0.35, delay: 0.3 }}
+            className="mb-8 max-w-xl text-lg leading-relaxed text-muted-foreground sm:text-xl"
           >
-            EnvSync is the modern enterprise alternative to Doppler and Vault.
-            Manage environment variables across all your applications.
+            EnvSync gives your team one source of truth for environment variables across
+            development, staging, and production with audit-ready controls.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center w-full lg:w-auto"
+            transition={{ duration: 0.35, delay: 0.4 }}
+            className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row"
           >
             <Link to="/onboarding" className="w-full sm:w-auto">
-              <Button
-                size="lg"
-                className="w-full bg-emerald-600 hover:bg-emerald-500 text-white px-8 py-6 text-lg font-medium shadow-[0_0_40px_-10px_rgba(16,185,129,0.5)] transition-all"
-              >
+              <Button size="lg" className="w-full px-8 text-base">
                 Get Started for Free
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="h-4 w-4" />
               </Button>
             </Link>
-            <Link
-              to="https://github.com/envsync-cloud"
-              className="w-full sm:w-auto"
-            >
-              <Button
-                size="lg"
-                variant="outline"
-                className="w-full border-slate-800 bg-slate-900/50 backdrop-blur-md px-8 py-6 text-lg text-slate-300 hover:text-white hover:bg-slate-800 hover:border-slate-700 transition-all"
-              >
-                <Github className="mr-2 h-5 w-5" />
+            <Link to="https://github.com/envsync-cloud" className="w-full sm:w-auto">
+              <Button size="lg" variant="outline" className="w-full px-8 text-base">
+                <Github className="h-4 w-4" />
                 View on GitHub
               </Button>
             </Link>
           </motion.div>
         </div>
 
-        {/* Globe Section */}
-        <div className="flex-1 w-full max-w-3xl lg:max-w-none relative z-0 flex items-center justify-center lg:justify-end pointer-events-none mt-12 lg:mt-0">
-          <Globe />
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.35, delay: 0.5 }}
+          className="grid auto-rows-[9.5rem] grid-cols-2 gap-3"
+        >
+          <div className="col-span-2 border border-border bg-[hsl(var(--surface-1))] p-5">
+            <p className="mb-2 text-xs uppercase tracking-[0.16em] text-muted-foreground">Deployment State</p>
+            <p className="text-2xl font-semibold text-foreground">All environments in sync</p>
+            <div className="mt-4 grid grid-cols-3 gap-2 text-sm">
+              <div className="border border-border bg-[hsl(var(--surface-2))] p-2 text-center text-muted-foreground">dev</div>
+              <div className="border border-primary/40 bg-[hsl(var(--surface-2))] p-2 text-center text-primary">staging</div>
+              <div className="border border-border bg-[hsl(var(--surface-2))] p-2 text-center text-muted-foreground">prod</div>
+            </div>
+          </div>
+
+          <div className="border border-border bg-[hsl(var(--surface-1))] p-4">
+            <ShieldCheck className="mb-3 h-5 w-5 text-primary" />
+            <p className="text-sm text-muted-foreground">Security</p>
+            <p className="mt-1 text-lg font-semibold">End-to-end encrypted</p>
+          </div>
+
+          <div className="border border-border bg-[hsl(var(--surface-1))] p-4">
+            <Workflow className="mb-3 h-5 w-5 text-primary" />
+            <p className="text-sm text-muted-foreground">Workflow</p>
+            <p className="mt-1 text-lg font-semibold">Versioned rollbacks</p>
+          </div>
+
+          <div className="border border-border bg-[hsl(var(--surface-1))] p-4">
+            <KeyRound className="mb-3 h-5 w-5 text-primary" />
+            <p className="text-sm text-muted-foreground">Secrets</p>
+            <p className="mt-1 text-lg font-semibold">Centralized by app</p>
+          </div>
+
+          <div className="border border-border bg-[hsl(var(--surface-1))] p-4">
+            <Terminal className="mb-3 h-5 w-5 text-primary" />
+            <p className="text-sm text-muted-foreground">CLI</p>
+            <p className="mt-1 font-mono text-sm text-foreground">envsync pull --env prod</p>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
